@@ -76,7 +76,7 @@ function returnArray (first, second, third) {
  * @returns {string} a sentence  composed from the first 3 elements of the array
  */
 function splitArray (thisArray) {
-  var a = thisArray[0] + " " + thisArray[1] " was a " + thisArray[2] + ".";
+  var a = thisArray[0] + " " + thisArray[1] + " was a " + thisArray[2] + ".";
   return 'hello';
 }
 
