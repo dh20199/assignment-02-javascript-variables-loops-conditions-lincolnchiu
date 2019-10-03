@@ -16,7 +16,7 @@ const path = require('path'),
       // gitConfig = require('gitconfig'),
       gitState = require('git-state');
 
-// why these?
+// why these? 
 var repoPath = path.resolve(process.env.REPO || (__dirname + '/../.git'));
 var ignoreCommitEmails = 'matt.price@utoronto.ca';
 const matchesProfEmail = function (email, profEmails) {
@@ -38,7 +38,7 @@ if (process.env.SOLUTIONS) {
   fns = require('../Problems/01-solution.js');
   ocl = require('../Problems/02-solution.js');
   //console.log("solutions again")
-} else {
+} else { 
   fns = require('../Problems/01-functions-and-variables.js');
   ocl = require('../Problems/02-objects-tests-loops.js');
 }
@@ -54,7 +54,7 @@ function getRandomInt(min, max) {
 var name,email,githubid;
 
 gitConfig(function (err, config) {
-  if (err) return done(err);
+  if (err) return done(err); 
   // console.log(config);
   if (config.user.name) { name = config.user.name; }
   if (config.user.email) { email = config.user.email; }
@@ -137,8 +137,8 @@ describe('Part 1 Tests', function() {
       let a=getRandomInt(1, 50),
           b=getRandomInt(1, 50),
           c=a-b;
-
-      assert.equal(fns.subtract(a,b), c);
+      
+      assert.equal(fns.subtract(a,b), c); 
     });
 
     it('function "carefulSubtract" should return the difference of the first and second parameters if both are numbers .', function () {
@@ -151,7 +151,7 @@ describe('Part 1 Tests', function() {
     it('function "carefulSubtract" should check to see if a and b are numbers.', function () {
       let a='I am not a number!',
           b='I am a free person';
-      assert.equal(fns.carefulSubtract(a,b), 'I can only subtract numbers.');
+      assert.equal(fns.carefulSubtract(a,b), 'I can only subtract numbers.'); 
     });
 
     it('function "typeTester" should return different responses for different variable types.', function () {
