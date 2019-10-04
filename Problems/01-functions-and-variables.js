@@ -21,7 +21,7 @@
 // Objects are quite a bit more complex than the other variable types and we will
 // discuss them later.
 
-// the special comment blocks above each function should help VSCode correct your mistakes. 
+// the special comment blocks above each function should help VSCode correct your mistakes.
 
 // Problem 1
 // write a function "hello" that always returns the string "Hello!"
@@ -31,9 +31,7 @@
  * @returns {string} should be exactly "Hello!"
  */
 function hello () {
-  // if you want you can declare a string variable first
-  // or in this case you can just return the string directly
-  // with something like "return 'Hello!'"
+  return 'Hello!';
 }
 
 // Problem 2
@@ -51,6 +49,7 @@ function greeting(name) {
   // say goodbye, I might write
   // let parting = "Goodbye, " + name + ".";
   // (but of course, I actually want to say hello.)
+  return "Hello, " + name + "!";
 }
 
 // Problem 3
@@ -61,11 +60,12 @@ function greeting(name) {
  * @param {} first
  * @param {} second
  * @param {} third
- * @returns {array} 
+ * @returns {array}
  */
 function returnArray (first, second, third) {
   // you can define the array using "new Array ()" or just "[ , , ]"
   // don't forget to return it
+  return [first,second,third];
 }
 
 
@@ -87,7 +87,7 @@ function splitArray (thisArray) {
   // array[0]
   // array[1]
   // etc.
-
+return thisArray[0] + " " + thisArray[1] + " was a " +thisArray[2] + ".";
 }
 
 // Problem 5
@@ -100,7 +100,7 @@ function splitArray (thisArray) {
  * @returns {number} the difference of the two parameters
  */
 function subtract(number1, number2) {
-  // subtract number2 from number1, and return the result.
+  return number1 - number2;
 }
 
 
@@ -112,6 +112,11 @@ function carefulSubtract (first, second) {
   // test to be sure that both first and second are numbers.
   // if so, return the result. Otherwise, return the string
   // "I can only subtract numbers."
+  if (isNaN(first) == false && isNaN(second) == false)
+    return first - second;
+  else {
+    return "I can only subtract numbers.";
+  }
 
 }
 
@@ -130,7 +135,13 @@ function carefulSubtract (first, second) {
  */
 function typeTester (unknown) {
   // use an if/else construction, a switch/case , or any other branching logic. Remember to
-  // return a value. 
+  // return a value.
+  switch (typeof unknown) {
+    case 'string': return unknown + " yay!";
+    case 'number': return unknown ** 2;
+    case 'undefined': return "Sorry, I can't do anything with an undefined value.";
+    default: return "I don't know how to use that kind of variable.";
+  }
 }
 
 
